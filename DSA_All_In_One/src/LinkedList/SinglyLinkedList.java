@@ -15,7 +15,14 @@ public class SinglyLinkedList {
 		size = 1;	   	 		 	  
 		return head;
 	}
-
+      // Insert method singly linked list
+	public void insertSinglyLinkedList(int value,int location) {
+		Node node =new Node();
+		node.data = value;
+		if(head == null) {
+			
+		}
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		SinglyLinkedList sLL = new SinglyLinkedList();
