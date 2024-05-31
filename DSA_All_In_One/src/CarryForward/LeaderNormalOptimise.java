@@ -6,7 +6,7 @@ package CarryForward;
 
 NOTE: The rightmost element is always a leader.
  */
-public class LeaderNormal {
+public class LeaderNormalOptimise {
 	// Problem facing with this method for skipping 4.
 	public void findLeaders(int A[]) {
 		for (int i = 0; i < A.length; i++) {
@@ -27,6 +27,7 @@ public class LeaderNormal {
 			}
 		}
 	}
+
 // Correct implementation and 
 	public void findLeadersTwo(int arr[]) {
 		int n = arr.length;
@@ -53,11 +54,24 @@ public class LeaderNormal {
 		}
 	}
 
+// Optimized Solution
+	public void optimised(int A[]) {
+		int n = A.length;
+		int max_from_right = A[n - 1];
+		System.out.print(A[n - 1] + " ");
+		for (int i = n - 2; i >= 0; i--) {
+			if (A[i] > max_from_right) {
+				System.out.print(A[i] + " ");
+				max_from_right = A[i];
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		LeaderNormal ln = new LeaderNormal();
+		LeaderNormalOptimise ln = new LeaderNormalOptimise();
 		int A[] = { 16, 17, 4, 3, 5, 2 };
-		ln.findLeadersTwo(A);
+		ln.optimised(A);
 	}
 
 }
